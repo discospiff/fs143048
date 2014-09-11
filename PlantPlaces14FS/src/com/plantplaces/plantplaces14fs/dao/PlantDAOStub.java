@@ -11,13 +11,12 @@ import com.plantplaces.plantplaces14fs.dto.Plant;
  * @author jonesbr
  *
  */
-public class PlantDAOStub {
+public class PlantDAOStub implements IPlantDAO {
 
-		/**
-		 * Return a collection of plants that contain the search term provided.
-		 * @param searchTerm a word that we will use to filter a collection of plants.
-		 * @return the matching collection of plants.
+		/* (non-Javadoc)
+		 * @see com.plantplaces.plantplaces14fs.dao.IPlantDAO#fetchPlants(java.lang.String)
 		 */
+		@Override
 		public List<Plant> fetchPlants(String searchTerm) {
 			// declare our return variable.
 			List<Plant> allPlants = new ArrayList<Plant>();
