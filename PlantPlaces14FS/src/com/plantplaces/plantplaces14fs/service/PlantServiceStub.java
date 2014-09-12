@@ -11,7 +11,7 @@ import com.plantplaces.plantplaces14fs.dto.Plant;
  * @author jonesbr
  *
  */
-public class PlantServiceStub {
+public class PlantServiceStub implements IPlantService {
 
 	// the variable type is the interface
 	IPlantDAO plantDAO;
@@ -26,6 +26,7 @@ public class PlantServiceStub {
 	 * @param searchTerm the word that we're looking for in the plant.
 	 * @return a matching list of plants.
 	 */
+	@Override
 	public List<Plant> fetchPlants(String searchTerm) {
 		return plantDAO.fetchPlants(searchTerm);
 	}
