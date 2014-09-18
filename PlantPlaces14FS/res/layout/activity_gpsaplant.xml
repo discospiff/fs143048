@@ -65,6 +65,14 @@
         <requestFocus />
     </AutoCompleteTextView>
 
-
+    <Button
+        android:id="@+id/btnPlantSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/actPlantName"
+        android:layout_alignRight="@+id/actPlantName"
+        android:layout_below="@+id/actPlantName"
+        android:onClick="btnSearchClicked"
+        android:text="@string/lblSearch" />
 
 </RelativeLayout>
