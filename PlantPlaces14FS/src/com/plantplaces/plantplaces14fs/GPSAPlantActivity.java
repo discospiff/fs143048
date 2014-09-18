@@ -32,7 +32,7 @@ public class GPSAPlantActivity extends Activity {
 	 */
 	public void btnSearchClicked(View v) {
 		// make a popup
-		Toast.makeText(this, "Button Clicked", Toast.LENGTH_LONG).show();
+		Toast.makeText(this, R.string.button_clicked, Toast.LENGTH_LONG).show();
 	}
 
 }

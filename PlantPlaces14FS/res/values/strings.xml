@@ -10,5 +10,6 @@
     <string name="lblPlantName">Plant Name</string>
     <string name="lblBlank"></string>
     <string name="lblSearch">Search</string>
+    <string name="button_clicked">Button Clicked</string>
 
 </resources>
