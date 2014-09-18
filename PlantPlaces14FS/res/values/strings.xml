@@ -4,5 +4,11 @@
     <string name="app_name">PlantPlaces14FS</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="lblLatitude">Latitude</string>
+    <string name="lblZero">0</string>
+    <string name="lblLongitude">Longitude</string>
+    <string name="lblPlantName">Plant Name</string>
+    <string name="lblBlank"></string>
+    <string name="lblSearch">Search</string>
 
 </resources>

@@ -1,8 +1,9 @@
 package com.plantplaces.plantplaces14fs;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.os.Bundle;
 import android.view.Menu;
+import android.widget.TextView;
 
 public class GPSAPlantActivity extends Activity {
 
@@ -10,6 +11,9 @@ public class GPSAPlantActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_gpsaplant);
+		
+		TextView txtLongitudeValue = (TextView) findViewById(R.id.txtLongitudeValue);
+		txtLongitudeValue.setText("1");
 	}
 
 	@Override
