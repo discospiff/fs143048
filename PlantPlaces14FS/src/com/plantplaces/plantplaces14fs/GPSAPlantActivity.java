@@ -4,10 +4,13 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class GPSAPlantActivity extends Activity {
+
+	private AutoCompleteTextView actPlantName;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +19,9 @@ public class GPSAPlantActivity extends Activity {
 		
 		TextView txtLongitudeValue = (TextView) findViewById(R.id.txtLongitudeValue);
 		txtLongitudeValue.setText("1");
+		
+		// this will give us access to widgets that are on our form
+		actPlantName = (AutoCompleteTextView) findViewById(R.id.actPlantName);
 	}
 
 	@Override
@@ -31,8 +37,11 @@ public class GPSAPlantActivity extends Activity {
 	 * @param v
 	 */
 	public void btnSearchClicked(View v) {
+		// get the text that the user entered into the auto complete text.
+		String plantName = actPlantName.getText().toString();
+		
 		// make a popup
-		Toast.makeText(this, R.string.button_clicked, Toast.LENGTH_LONG).show();
+		Toast.makeText(this, plantName, Toast.LENGTH_LONG).show();
 	}
 
 }
