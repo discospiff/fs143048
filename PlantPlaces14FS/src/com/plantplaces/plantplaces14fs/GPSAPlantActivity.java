@@ -1,12 +1,12 @@
 package com.plantplaces.plantplaces14fs;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class GPSAPlantActivity extends Activity {
 
@@ -19,9 +19,10 @@ public class GPSAPlantActivity extends Activity {
 		
 		TextView txtLongitudeValue = (TextView) findViewById(R.id.txtLongitudeValue);
 		txtLongitudeValue.setText("1");
-		
+	
 		// this will give us access to widgets that are on our form
 		actPlantName = (AutoCompleteTextView) findViewById(R.id.actPlantName);
+	
 	}
 
 	@Override
@@ -41,7 +42,11 @@ public class GPSAPlantActivity extends Activity {
 		String plantName = actPlantName.getText().toString();
 		
 		// make a popup
-		Toast.makeText(this, plantName, Toast.LENGTH_LONG).show();
+		// Toast.makeText(this, plantName, Toast.LENGTH_LONG).show();
+		
+		Intent plantResults = new Intent(this, PlantResultsActivity.class);
+		plantResults.putExtra("PLANT_NAME", plantName);
+		startActivity(plantResults);
 	}
 
 }
