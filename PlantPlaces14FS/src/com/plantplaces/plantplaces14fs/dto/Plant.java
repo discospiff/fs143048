@@ -52,5 +52,10 @@ public class Plant {
 	public void setCommon(String common) {
 		this.common = common;
 	}
+	
+	@Override
+	public String toString() {
+		return genus + " " + species + " " + common;
+	}
 
 }
