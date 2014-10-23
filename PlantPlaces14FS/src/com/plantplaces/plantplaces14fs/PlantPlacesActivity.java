@@ -3,6 +3,7 @@ package com.plantplaces.plantplaces14fs;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
+import android.view.MenuItem;
 
 public abstract class PlantPlacesActivity extends Activity {
 
@@ -30,7 +31,7 @@ public abstract class PlantPlacesActivity extends Activity {
 	 * Handle plant search method.
 	 * @param menu
 	 */
-	public void plantSearchClicked(Menu menu) {
+	public void plantSearchClicked(MenuItem menu) {
 		Intent plantSearch = new Intent(this, PlantSearchActivity.class);
 		startActivity(plantSearch);
 		
@@ -40,7 +41,7 @@ public abstract class PlantPlacesActivity extends Activity {
 	 * Handle GPS a plant menu method.
 	 * @param menu
 	 */
-	public void gpsAPlantClicked(Menu menu) {
+	public void gpsAPlantClicked(MenuItem menu) {
 		Intent gpsAPlant = new Intent(this, GPSAPlantActivity.class);
 		startActivity(gpsAPlant);		
 	}
