@@ -1,14 +1,12 @@
 package com.plantplaces.plantplaces14fs;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
 
-public class GPSAPlantActivity extends Activity {
+public class GPSAPlantActivity extends PlantPlacesActivity {
 
 	private AutoCompleteTextView actPlantName;
 
@@ -25,13 +23,6 @@ public class GPSAPlantActivity extends Activity {
 	
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.gpsaplant, menu);
-		return true;
-	}
-	
 	/**
 	 * This method will be invoked when the search button is clicked.
 	 * This will handle searching for the given plant
@@ -47,25 +38,6 @@ public class GPSAPlantActivity extends Activity {
 		Intent plantResults = new Intent(this, PlantResultsActivity.class);
 		plantResults.putExtra("PLANT_NAME", plantName);
 		startActivity(plantResults);
-	}
-	
-	/**
-	 * Handle plant search method.
-	 * @param menu
-	 */
-	public void plantSearchClicked(Menu menu) {
-		Intent plantSearch = new Intent(this, PlantSearchActivity.class);
-		startActivity(plantSearch);
-		
-	}
-	
-	/** 
-	 * Handle GPS a plant menu method.
-	 * @param menu
-	 */
-	public void gpsAPlantClicked(Menu menu) {
-		Intent gpsAPlant = new Intent(this, GPSAPlantActivity.class);
-		startActivity(gpsAPlant);		
 	}
 
 }
