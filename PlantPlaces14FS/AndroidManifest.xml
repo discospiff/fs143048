@@ -23,6 +23,7 @@
             </intent-filter>
         </activity>
         <activity android:name="PlantResultsActivity"></activity>
+        <activity android:name="PlantSearchActivity"></activity>
     </application>
 
 </manifest>

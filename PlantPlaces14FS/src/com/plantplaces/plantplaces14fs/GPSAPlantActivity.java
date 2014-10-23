@@ -48,5 +48,24 @@ public class GPSAPlantActivity extends Activity {
 		plantResults.putExtra("PLANT_NAME", plantName);
 		startActivity(plantResults);
 	}
+	
+	/**
+	 * Handle plant search method.
+	 * @param menu
+	 */
+	public void plantSearchClicked(Menu menu) {
+		Intent plantSearch = new Intent(this, PlantSearchActivity.class);
+		startActivity(plantSearch);
+		
+	}
+	
+	/** 
+	 * Handle GPS a plant menu method.
+	 * @param menu
+	 */
+	public void gpsAPlantClicked(Menu menu) {
+		Intent gpsAPlant = new Intent(this, GPSAPlantActivity.class);
+		startActivity(gpsAPlant);		
+	}
 
 }

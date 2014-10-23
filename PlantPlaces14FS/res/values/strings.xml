@@ -11,5 +11,7 @@
     <string name="lblBlank"></string>
     <string name="lblSearch">Search</string>
     <string name="button_clicked">Button Clicked</string>
+    <string name="lblGPSAPlant">GPS A Plant</string>
+    <string name="lblPlantSearch">Plant Search</string>
 
 </resources>
