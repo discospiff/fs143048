@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 
-public class PlantPlacesActivity extends Activity {
+public abstract class PlantPlacesActivity extends Activity {
 
 	public PlantPlacesActivity() {
 		super();
@@ -14,8 +14,17 @@ public class PlantPlacesActivity extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.gpsaplant, menu);
+		// remove the menu for the current screen, via an Abstract Method.
+		menu.removeItem(getCurrentMenuID());
 		return true;
 	}
+
+	/**
+	 * The menu ID of the current screen.  
+	 * This will be defined by the superclass, which will know its menu ID.
+	 * @return
+	 */
+	public abstract int getCurrentMenuID();
 
 	/**
 	 * Handle plant search method.
@@ -35,5 +44,7 @@ public class PlantPlacesActivity extends Activity {
 		Intent gpsAPlant = new Intent(this, GPSAPlantActivity.class);
 		startActivity(gpsAPlant);		
 	}
+	
+	
 
 }

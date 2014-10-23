@@ -40,4 +40,10 @@ public class GPSAPlantActivity extends PlantPlacesActivity {
 		startActivity(plantResults);
 	}
 
+	@Override
+	public int getCurrentMenuID() {
+		// TODO Auto-generated method stub
+		return R.id.gpsAPlant;
+	}
+
 }
