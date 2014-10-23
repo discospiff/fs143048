@@ -15,5 +15,8 @@
     <string name="lblPlantSearch">Plant Search</string>
     <string name="lblTakePhoto">Take Photo</string>
     <string name="lblSave">Save</string>
+    <string name="lblImageGallery">Image Gallery</string>
+    <string name="btnCamera">Camera</string>
+    <string name="unable_to_open_image">Unable to open image</string>
 
 </resources>

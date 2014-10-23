@@ -3,6 +3,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lblPlantName" />
+
+    <AutoCompleteTextView
+        android:id="@+id/actPlantNameSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="@string/lblBlank" />
+
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lblSearch" />
+
+    <Button
+        android:id="@+id/btnImageGallery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onImageGalleryClicked"
+        android:text="@string/lblImageGallery" />
+
+    <Button
+        android:id="@+id/btnCamera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onCameraClicked"
+        android:text="@string/btnCamera" />
+
+    <ImageView
+        android:id="@+id/imgPlantSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.00"
+        android:src="@drawable/ic_launcher" />
 
 </LinearLayout>
