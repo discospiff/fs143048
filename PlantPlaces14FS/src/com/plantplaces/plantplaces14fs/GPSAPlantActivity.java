@@ -52,7 +52,7 @@ public class GPSAPlantActivity extends PlantPlacesActivity {
 		return R.id.gpsAPlant;
 	}
 
-	public void takePhotoClick(View v) {
+	public void takePhotoClicked(View v) {
 		// We are invoking the camera, but we are NOT saving the image to the SDCard, because we did not pass in 
 		// an EXTRA indicating where to save the image.
 		Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
