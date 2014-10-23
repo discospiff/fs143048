@@ -75,4 +75,34 @@
         android:onClick="btnSearchClicked"
         android:text="@string/lblSearch" />
 
+    <Button
+        android:id="@+id/btnTakePhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/btnPlantSearch"
+        android:layout_below="@+id/btnPlantSearch"
+        android:layout_toRightOf="@+id/txtLongitudeValue"
+        android:onClick="takePhotoClicked"
+        android:text="@string/lblTakePhoto" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnTakePhoto"
+        android:layout_alignRight="@+id/btnTakePhoto"
+        android:layout_below="@+id/btnTakePhoto"
+        android:text="@string/lblSave" />
+
+    <ImageView
+        android:id="@+id/imgPlantPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/btnSave"
+        android:layout_below="@+id/btnSave"
+        android:layout_marginTop="14dp"
+        android:src="@drawable/ic_launcher" />
+
 </RelativeLayout>

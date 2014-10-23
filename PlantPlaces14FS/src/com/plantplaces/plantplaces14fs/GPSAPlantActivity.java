@@ -1,14 +1,18 @@
 package com.plantplaces.plantplaces14fs;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class GPSAPlantActivity extends PlantPlacesActivity {
 
+	private static final int CAMERA_ACTIVITY = 10;
 	private AutoCompleteTextView actPlantName;
+	private ImageView imgPlantPhoto;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +24,8 @@ public class GPSAPlantActivity extends PlantPlacesActivity {
 	
 		// this will give us access to widgets that are on our form
 		actPlantName = (AutoCompleteTextView) findViewById(R.id.actPlantName);
+		
+		imgPlantPhoto = (ImageView) findViewById(R.id.imgPlantPhoto);
 	
 	}
 
@@ -45,5 +51,25 @@ public class GPSAPlantActivity extends PlantPlacesActivity {
 		// TODO Auto-generated method stub
 		return R.id.gpsAPlant;
 	}
+
+	public void takePhotoClick(View v) {
+		// We are invoking the camera, but we are NOT saving the image to the SDCard, because we did not pass in 
+		// an EXTRA indicating where to save the image.
+		Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+		startActivityForResult(cameraIntent, CAMERA_ACTIVITY);
+
+	}
+	
+	@Override
+ 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+ 		if (resultCode == RESULT_OK) {
+ 			if (requestCode == CAMERA_ACTIVITY) {
+ 				// get the image that the user took
+ 				Bitmap cameraImage = (Bitmap) data.getExtras().get("data");
+ 				// show this image to the user.
+ 				imgPlantPhoto.setImageBitmap(cameraImage);
+ 			}
+ 		}
+ 	}
 
 }

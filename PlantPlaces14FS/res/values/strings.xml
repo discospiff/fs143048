@@ -13,5 +13,7 @@
     <string name="button_clicked">Button Clicked</string>
     <string name="lblGPSAPlant">GPS A Plant</string>
     <string name="lblPlantSearch">Plant Search</string>
+    <string name="lblTakePhoto">Take Photo</string>
+    <string name="lblSave">Save</string>
 
 </resources>
