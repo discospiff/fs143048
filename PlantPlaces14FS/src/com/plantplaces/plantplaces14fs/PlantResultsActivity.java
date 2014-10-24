@@ -3,6 +3,7 @@ package com.plantplaces.plantplaces14fs;
 import java.util.List;
 
 import android.app.ListActivity;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 
@@ -25,14 +26,48 @@ public class PlantResultsActivity extends ListActivity {
 		// get the plant name from the calling screen.
 		String plantName = this.getIntent().getStringExtra("PLANT_NAME");
 		
-		// search for the plant by name
-		List<Plant> plants = plantService.fetchPlants(plantName);
-
-		// make the list available to be shown on the screen.
-		ArrayAdapter<Plant> plantAdapter = new ArrayAdapter<Plant>(this, android.R.layout.simple_list_item_1, plants);
+		// make an object of the inner class.
+		PlantSearchTask pst = new PlantSearchTask();
+		// execute will:
+		// 1) Create a new thread.
+		// 2) invoke the doInBackground in that new thread.
+		// 3) Pass the search term to the doInBackground.
+		pst.execute(plantName);
 		
-		// show the list on the screen.
-		setListAdapter(plantAdapter);
 	}
+	
+	/**
+	 * An inner class to make threading happen.
+	 * @author jonesbr
+	 *
+	 */
+	class PlantSearchTask extends AsyncTask<String, Integer, List<Plant>> {
+
+		@Override
+		protected void onPostExecute(List<Plant> plants) {
+
+			// make the list available to be shown on the screen.
+			ArrayAdapter<Plant> plantAdapter = new ArrayAdapter<Plant>(PlantResultsActivity.this, android.R.layout.simple_list_item_1, plants);
+			
+			// show the list on the screen.
+			setListAdapter(plantAdapter);
+
+			
+		}
+		
+		/**
+		 * This is the method that will be run in a new thread.
+		 */
+		@Override
+		protected List<Plant> doInBackground(String... plantNames) {
+			
+			// search for the plant by name
+			List<Plant> plants = plantService.fetchPlants(plantNames[0]);
+			
+			return plants;
+		}
+		
+	}
+
 	
 }
