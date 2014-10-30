@@ -2,30 +2,40 @@ package com.plantplaces.plantplaces14fs;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class GPSAPlantActivity extends PlantPlacesActivity {
+public class GPSAPlantActivity extends PlantPlacesActivity implements LocationListener {
 
 	private static final int CAMERA_ACTIVITY = 10;
 	private AutoCompleteTextView actPlantName;
 	private ImageView imgPlantPhoto;
+	private LocationManager locationManager;
+	private TextView txtLatitude;
+	private TextView txtLongitudeValue;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_gpsaplant);
 		
-		TextView txtLongitudeValue = (TextView) findViewById(R.id.txtLongitudeValue);
+		txtLongitudeValue = (TextView) findViewById(R.id.txtLongitudeValue);
 		txtLongitudeValue.setText("1");
+		
+		txtLatitude = (TextView) findViewById(R.id.txtLatidude);
 	
 		// this will give us access to widgets that are on our form
 		actPlantName = (AutoCompleteTextView) findViewById(R.id.actPlantName);
 		
 		imgPlantPhoto = (ImageView) findViewById(R.id.imgPlantPhoto);
+		
+		locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
 	
 	}
 
@@ -72,4 +82,54 @@ public class GPSAPlantActivity extends PlantPlacesActivity {
  		}
  	}
 
+	/**
+	 * Tell the LocationListener about the LocationManager.
+	 */
+	private void requestUpdates() {
+		if (locationManager != null) {
+			locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 60 * 1000, 0, this);
+		}
+	}
+	
+	@Override
+	public void onLocationChanged(Location location) {
+		txtLatitude.setText("" + location.getLatitude());
+		txtLongitudeValue.setText("" + location.getLongitude());
+	}
+
+	@Override
+	public void onProviderDisabled(String provider) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onProviderEnabled(String provider) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onStatusChanged(String provider, int status, Bundle extras) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		removeLocationUpdates();
+	}
+
+	private void removeLocationUpdates() {
+		locationManager.removeUpdates(this);
+		
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		requestUpdates();
+	}
+	
 }
