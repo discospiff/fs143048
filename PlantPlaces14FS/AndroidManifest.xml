@@ -23,8 +23,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="PlantResultsActivity"></activity>
-        <activity android:name="PlantSearchActivity"></activity>
+        <activity android:name="PlantResultsActivity">
+            <intent-filter>
+                <action android:name="PLANT_RESULTS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="PlantSearchActivity">
+            <intent-filter>
+                <action android:name="PLANT_SEARCH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

@@ -32,7 +32,7 @@ public abstract class PlantPlacesActivity extends Activity {
 	 * @param menu
 	 */
 	public void plantSearchClicked(MenuItem menu) {
-		Intent plantSearch = new Intent(this, PlantSearchActivity.class);
+		Intent plantSearch = new Intent("PLANT_SEARCH");
 		startActivity(plantSearch);
 		
 	}
