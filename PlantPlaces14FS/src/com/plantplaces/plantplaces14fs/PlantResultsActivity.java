@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 
 import com.plantplaces.plantplaces14fs.dto.Plant;
 import com.plantplaces.plantplaces14fs.service.IPlantService;
-import com.plantplaces.plantplaces14fs.service.PlantServiceStub;
+import com.plantplaces.plantplaces14fs.service.PlantService;
 
 public class PlantResultsActivity extends ListActivity {
 
@@ -21,7 +21,7 @@ public class PlantResultsActivity extends ListActivity {
 		super.onCreate(savedInstanceState);
 		
 		// instantiate our PlantService.
-		plantService = new PlantServiceStub();
+		plantService = new PlantService();
 		
 		// get the plant name from the calling screen.
 		String plantName = this.getIntent().getStringExtra("PLANT_NAME");
