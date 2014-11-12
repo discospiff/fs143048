@@ -53,7 +53,7 @@ public class PlantDAO implements IPlantDAO {
 				String common = jsonPlant.getString("common");
 				
 				// populate the plant.
-				plant.setId(id);
+				plant.setGuid(id);
 				plant.setGenus(genus);
 				plant.setSpecies(species);
 				plant.setCultivar(cultivar);
