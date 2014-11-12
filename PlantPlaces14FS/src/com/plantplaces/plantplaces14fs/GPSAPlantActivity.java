@@ -51,7 +51,7 @@ public class GPSAPlantActivity extends PlantPlacesActivity implements LocationLi
 		// make a popup
 		// Toast.makeText(this, plantName, Toast.LENGTH_LONG).show();
 		
-		Intent plantResults = new Intent(this, PlantResultsActivity.class);
+		Intent plantResults = new Intent(this, PlantResultsManager.class);
 		plantResults.putExtra("PLANT_NAME", plantName);
 		startActivity(plantResults);
 	}
