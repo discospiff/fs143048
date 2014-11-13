@@ -3,6 +3,7 @@ package com.plantplaces.plantplaces14fs;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -13,7 +14,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class PlantSearchActivity extends PlantPlacesActivity {
+public class PlantSearchActivity extends Activity {
 
 	private static final int IMAGE_GALLERY = 100;
 	private Bitmap selectedImage;
@@ -29,11 +30,6 @@ public class PlantSearchActivity extends PlantPlacesActivity {
 	}
 
 
-	@Override
-	public int getCurrentMenuID() {
-		// TODO Auto-generated method stub
-		return R.id.plantSearch;
-	}
 
 	/**
 	 * This method is invoked when the select a picture button is pressed.
