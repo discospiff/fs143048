@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class PlantResultsManager extends Activity implements PlantResultsFragment.Callback {
+public class PlantResultsManager extends PlantBaseActivity implements PlantResultsFragment.Callback {
 
 	public static final String GUID2 = "GUID";
 	private boolean twoPane;
@@ -49,6 +49,12 @@ public class PlantResultsManager extends Activity implements PlantResultsFragmen
 			intent.putExtra(GUID2, guid);
 			startActivity(intent);
 		}
+	}
+
+	@Override
+	public int getMenuId() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

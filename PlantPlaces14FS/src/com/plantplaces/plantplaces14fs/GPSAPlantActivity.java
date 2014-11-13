@@ -1,6 +1,5 @@
 package com.plantplaces.plantplaces14fs;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.location.Location;
@@ -12,7 +11,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class GPSAPlantActivity extends Activity implements LocationListener {
+public class GPSAPlantActivity extends PlantBaseActivity implements LocationListener {
 
 	private static final int CAMERA_ACTIVITY = 10;
 	private AutoCompleteTextView actPlantName;
@@ -127,6 +126,12 @@ public class GPSAPlantActivity extends Activity implements LocationListener {
 	protected void onResume() {
 		super.onResume();
 		requestUpdates();
+	}
+
+	@Override
+	public int getMenuId() {
+		// TODO Auto-generated method stub
+		return R.id.mnuGPSAPlant;
 	}
 	
 }

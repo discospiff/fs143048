@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/mnuGPSAPlant" android:showAsAction="ifRoom" android:onClick="onMnuGPSAPlantClicked" android:title="@string/lblGPSAPlant"></item>
+    <item android:id="@+id/mnuAdvancedPlantSeach" android:showAsAction="ifRoom" android:onClick="onAdvancedPlantSearchClicked" android:title="@string/lblPlantSearch"></item>
+    
+
+</menu>

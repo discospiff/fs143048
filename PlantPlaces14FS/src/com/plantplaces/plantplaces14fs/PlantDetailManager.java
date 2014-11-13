@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 
-public class PlantDetailManager extends Activity {
+public class PlantDetailManager extends PlantBaseActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,12 @@ public class PlantDetailManager extends Activity {
 			transaction.add(R.id.plantDetailWebView, pdf);
 			transaction.commit();
 		}
+	}
+
+	@Override
+	public int getMenuId() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 }

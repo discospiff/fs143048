@@ -14,7 +14,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class PlantSearchActivity extends Activity {
+public class PlantSearchActivity extends PlantBaseActivity {
 
 	private static final int IMAGE_GALLERY = 100;
 	private Bitmap selectedImage;
@@ -90,6 +90,14 @@ public class PlantSearchActivity extends Activity {
 			}
 		}
 
+	}
+
+
+
+	@Override
+	public int getMenuId() {
+		// TODO Auto-generated method stub
+		return R.id.mnuAdvancedPlantSeach;
 	}
 
 }
